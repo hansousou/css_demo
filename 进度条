@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .wrapper{
+            width:500px;
+            height: 25px;
+            position: relative;
+            margin:100px auto;
+            border-radius: 25px;
+            background:rgba(0,0,0,0.5);
+            /* overflow-y: hidden; */
+        }
+        .num{
+            width:40px;
+            height: 20px;
+            background:rgba(0,0,0,0.5);
+            color:#fff;
+            font-weight: bold;
+            position: absolute;
+            left:0;
+            top:-25px;
+            border-radius: 20px;
+            text-align: center;
+            line-height: 20px;
+        }
+        .inner{
+            width:0;
+            height: 100%;
+            position: absolute;
+            left:0;
+            top:0;
+            background-color:salmon;
+            background-image:linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+            background-size: 40px 40px;
+            border-radius: 50px;
+            animation: move 0.4s  linear infinite;
+        }
+        @-webkit-keyframes move {
+            from {
+                background-position: 40px 0;
+            }
+            to {
+                background-position: 0 0;
+        }
+        }
+        @keyframes move {
+            from {
+                background-position: 40px 0;
+            }
+            to {
+                background-position: 0 0;
+        }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="num">0%</div>
+        <div class="inner"></div>
+    </div>
+    <script>
+        var num = document.getElementsByClassName('num')[0];
+        var inner = document.getElementsByClassName('inner')[0];
+        var wrapper = document.getElementsByClassName('wrapper')[0]
+        console.log(wrapper.clientWidth)
+        var i =0;
+        setInterval(function(){            
+            if(i<wrapper.clientWidth){
+                i++;
+                num.style.left = `${i-40}px`;  
+                num.innerHTML = parseInt(`${i/5}`);
+                inner.style.width = `${i}px`
+                console.log(i)
+            }
+        },5)
+    </script>
+</body>
+</html>

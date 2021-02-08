@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    body,
+    html {
+      height: 100%;
+      background: #f6f4ee;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      width: 200px;
+      height: 200px;
+      margin-bottom: 100px;
+    }
+
+    .circle {
+      width: 40px;
+      height: 40px;
+      background: red;
+      border-radius: 50%;
+      offset-path: path("m277.5,151.45313c-65,56 -40,-72.90625 -111.5,-3.45313c-71.5,69.45313 71.5,136.45313 71,136c0.5,0.45313 81.5,-35.45313 105,-61c23.5,-25.54687 35.5,-69.54687 35,-70c0.5,0.45313 -34.5,-57.54687 -99.5,-1.54687z");
+      offset-rotate: 0deg;
+      position: relative;
+      transform: scale(1.5);
+    }
+
+    .circle-1 {
+      width: 30px;
+      height: 30px;
+      background: #814ab1;
+    }
+
+    .circle-2 {
+      width: 25px;
+      height: 25px;
+      background: #4cbdc9;
+      left: -30px;
+    }
+
+    .circle-3 {
+      width: 20px;
+      height: 20px;
+      background: #ffce24;
+      left: -55px;
+    }
+
+    .circle-4 {
+      width: 15px;
+      height: 15px;
+      background: #ff2d74;
+      left: -75px;
+    }
+
+    .circle-1 {
+      animation: load 1.8s cubic-bezier(0.86, 0, 0.07, 1) infinite;
+      animation-delay: 0.147s;
+      animation-fill-mode: forwards;
+      z-index: 99;
+    }
+
+    .circle-2 {
+      animation: load 1.8s cubic-bezier(0.86, 0, 0.07, 1) infinite;
+      animation-delay: 0.294s;
+      animation-fill-mode: forwards;
+      z-index: 98;
+    }
+
+    .circle-3 {
+      animation: load 1.8s cubic-bezier(0.86, 0, 0.07, 1) infinite;
+      animation-delay: 0.441s;
+      animation-fill-mode: forwards;
+      z-index: 97;
+    }
+
+    .circle-4 {
+      animation: load 1.8s cubic-bezier(0.86, 0, 0.07, 1) infinite;
+      animation-delay: 0.588s;
+      animation-fill-mode: forwards;
+      z-index: 96;
+    }
+
+    @keyframes load {
+      from {
+        offset-distance: 0;
+      }
+
+      to {
+        offset-distance: 100%;
+      }
+    }
+
+    path {
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      -webkit-animation: dash 5s linear infinite;
+      animation: dash 5s linear infinite;
+    }
+
+    @-webkit-keyframes dash {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    @keyframes dash {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="circle circle-1"></div>
+    <div class="circle circle-2"></div>
+    <div class="circle circle-3"></div>
+    <div class="circle circle-4"></div>
+  </div>
+
+  <svg width="700" height="350" xmlns="http://www.w3.org/2000/svg">
+    <g>
+      <path
+        d="m277.5,151.45313c-65,56 -40,-72.90625 -111.5,-3.45313c-71.5,69.45313 71.5,136.45313 71,136c0.5,0.45313 81.5,-35.45313 105,-61c23.5,-25.54687 35.5,-69.54687 35,-70c0.5,0.45313 -34.5,-57.54687 -99.5,-1.54687z"
+        stroke-width="3" stroke="red" fill="pink" stroke-linecap='round' stroke-linejoin='round'>
+    </g>
+  </svg>
+</body>
+
+</html>
+
+<!-- svg编辑器
+https://c.runoob.com/more/svgeditor/ -->
+<!-- svg描边动画 
+  https://www.zhangxinxu.com/wordpress/2014/04/animateion-line-drawing-svg-path-%e5%8a%a8%e7%94%bb-%e8%b7%af%e5%be%84/ -->

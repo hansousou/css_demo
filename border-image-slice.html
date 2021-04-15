@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>css：border-image-slice属性</title>
+  <style>
+    body{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;    
+    }
+    .box{
+      font-size: 14px;
+      color:#333;     
+      border-image-slice:30 146 35 119 fill;
+      border-image-source:url('./img/mid-autumn-ring-btn.png');
+      border-image-width:30px 146px 35px 119px; 
+      padding:10px;
+      outline: none;
+      max-width: 200px;
+      margin:10px;
+    }
+    .box2{
+      border-image-slice:184 383 179 282 fill;
+      border-image-source:url('./img/bg_game_list.png');
+      border-image-width:184px 383px 179px 282px; 
+    }
+    .box3{
+      border-image-slice:211 368 107 297 fill;
+      border-image-source:url('./img/bg_question.png');
+      border-image-width:211px 368px 107px 297px;
+      color:#fff;
+    }
+  </style>
+</head>
+<body>
+    <div class='box' contenteditable="true">输入内容1</div>
+    <div class='box box2' contenteditable="true">输入内容2</div>
+    <div class='box box3' contenteditable="true">输入内容3</div>
+</body>
+</html>
+
